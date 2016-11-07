@@ -1,72 +1,24 @@
+
 var React = require('react');
 var ReactDOM = require('react-dom');
+var routes = require('./config/routes');
+var Raven = require('raven-js')
 
-var USER_DATA = {
-  name: "Greg Pfaff",
-  username: "GPFAFF",
-  image: "https://avatars3.githubusercontent.com/u/1102168?v=3&s=466"
+var sentryKey = 'b69d1d13629e473c8ca80d483696d94f';
+var sentryApp = '112780';
+var sentryURL = 'https://' + sentryKey + '@sentry.io/' + sentryApp;
+
+var _APP_INFO = {
+  name: 'Github Battle',
+  branch: 'video4',
+  version: '1.0'
 }
-/*
-  FIRST REACT ACRONYMN 
 
-  Focused
-  Independent
-  Reusable
-  Smart
-  Testable
-*/
-
-var ProfilePic = React.createClass({
-  render() {
-    return (
-      <img src={this.props.imageUrl} style={{height: 100, width: 100}} />
-    )
+Raven.config(sentryURL, {
+  release: _APP_INFO.version,
+  tags: {
+    branch: _APP_INFO.branch,
   }
-});
+}).install()
 
-var Link = React.createClass({
-  changeURL() {
-    window.location.replace(this.props.href);
-  },
-  render() {
-    return (
-      <span
-      onClick={this.changeURL}
-      style={{color: 'red', cursor: 'pointer'}}>
-        {this.props.children}
-      </span>
-    )
-  }
-})
-
-var ProfileLink = React.createClass({
-  render() {
-    return (
-      <div>
-        <Link href={"https://github.com/" + this.props.username}> {this.props.username} </Link>
-      </div>
-    )
-  }
-});
-
-var ProfileName = React.createClass({
-  render() {
-    return (
-      <div> {this.props.name} </div>
-    )
-  }
-});
-
-var Avatar = React.createClass({
-  render() {
-    return (
-      <div>
-        <ProfilePic imageUrl={this.props.user.image}/>
-        <ProfileLink username={this.props.user.username} />
-        <ProfileName name={this.props.user.name} />
-      </div>
-    )
-  }
-})
-
-ReactDOM.render(<Avatar user={USER_DATA} />, document.getElementById('app'));
+ReactDOM.render(routes, document.getElementById('app'));
