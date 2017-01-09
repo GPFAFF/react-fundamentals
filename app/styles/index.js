@@ -6,8 +6,8 @@ var styles = {
     marginTop: '25px'
   },
   button: {
-    width: '100%',
-    marginTop: '25px'
+    width: '300px',
+    margin: '25px auto'
   },
   image: {
     width: '100%'

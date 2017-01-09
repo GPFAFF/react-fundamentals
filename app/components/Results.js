@@ -5,6 +5,7 @@ var ReactRouter = require('react-router');
 var Link = ReactRouter.Link
 var UserDetails = require('./UserDetails');
 var UserDetailsWrapper = require('./UserDetailsWrapper');
+var Loading = require('./Loading');
 
 
 var MainContainer = require('./MainContainer');
@@ -37,14 +38,12 @@ function Tie (props) {
 function Results (props) {
 
   if (props.isLoading === true) {
-    return <p> Loading </p>
-
+    return <Loading speed={500} text={"Welcome to Thunderdome!"}/>
   }
 
   if (props.scores[0] === props.scores[1]) {
     return (
       <Tie scores={props.scores} playersInfo={props.playersInfo}/>
-
     )
   }
 
