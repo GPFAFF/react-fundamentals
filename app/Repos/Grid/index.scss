@@ -1,0 +1,54 @@
+main {
+  > ul {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    list-style: none;
+    grid-gap: 20px;
+    justify-items: center;
+    font-family: 'Big Shoulders Display', cursive;
+    margin: 0;
+
+    h4 {
+      font-size: 30px;
+      margin-top: 0;
+    }
+
+    h5 {
+      font-size: 24px;
+    }
+
+    > li {
+      background-color: #f0f0f0;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      width: 100%;
+      padding: 40px 0;
+
+      > a {
+        margin-left: 5px;
+      }
+
+      > ul {
+        display: block;
+        list-style: none;
+        padding: 0;
+        line-height: 1;
+
+        > li {
+          padding: 4px 0;
+        }
+
+        > li > svg {
+          margin-right: 10px;
+        }
+      }
+
+      img {
+        max-width: 150px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

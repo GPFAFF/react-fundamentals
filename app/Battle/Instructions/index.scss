@@ -1,0 +1,31 @@
+.instructions-container {
+  font-family: 'Big Shoulders Display', cursive;
+
+  h2 {
+    color: white;
+    text-align: center;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    justify-items: center;
+    list-style: none;
+    padding: 0;
+
+    h3 {
+      text-align: center;
+    }
+
+    li {
+      border-radius: 5px;
+      background-color: #eee;
+      padding: 20px;
+      width: 80%;
+      justify-items: center;
+      align-items: center;
+      display: grid;
+    }
+  }
+}

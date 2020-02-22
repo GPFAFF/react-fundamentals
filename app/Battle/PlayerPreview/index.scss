@@ -1,0 +1,37 @@
+.player-input {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  padding: 30px;
+  grid-gap: 20px;
+  font-family: 'Big Shoulders Display', cursive;
+
+  > div {
+    width: 100%;
+
+    > .player {
+      background-color: #eee;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  a {
+    font-size: 36px;
+    color: rgb(184, 36, 36);
+    text-decoration: none;
+    padding-right: 100px;
+  }
+
+  .cancel {
+    border: 0;
+    background-color: transparent;
+  }
+
+  img {
+    height: 50px;
+    border-radius: 50px;
+  }
+}
