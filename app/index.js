@@ -1,10 +1,10 @@
 import React, { Component, lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from './context/theme';
-import { 
-  BrowserRouter as Router, 
-  Route, 
-  Switch 
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
 } from 'react-router-dom';
 
 const Battle = lazy(() => import('./Battle'));
